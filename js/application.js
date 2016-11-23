@@ -340,7 +340,7 @@ PouchNotesObj.prototype.search = function(searchkey) {
 		regex = new RegExp(searchkey,'i');
 		
 		if( regex.test(doc.notetitle) || regex.test(doc.note) || regex.test(doc.tags) ){		
-			emit(doc._id, {notetitle: doc.notetitle, id: doc._id, modified: doc.modified});
+		    emit(doc._id, {notetitle: doc.notetitle, id: doc._id, date: doc.date, note: doc.note, tags: doc.tags, modified: doc.modified});
 		}
 	}
 	
